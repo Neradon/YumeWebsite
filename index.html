@@ -17,7 +17,7 @@
     --gold: #c9a97a;
     --muted: #8a6070;
   }
-  body { font-family: 'Josefin Sans', sans-serif; background: var(--cream); color: var(--plum); overflow-x: hidden; }
+  body { font-family: 'Josefin Sans', sans-serif; background: #1a0a10; color: var(--plum); overflow-x: hidden; }
   .hero {
     min-height: 100vh;
     background: linear-gradient(160deg, #1a0a10 0%, #2d0f1e 40%, #1a0a10 100%);
@@ -93,18 +93,20 @@
   .nav-links a { color: rgba(244,184,200,0.7); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--sakura); }
   section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .light-section { background: linear-gradient(180deg, #1a0a10 0%, #22101a 50%, #1a0a10 100%); max-width: 100%; padding: 6rem 2rem; }
+  .light-section-inner { max-width: 1100px; margin: 0 auto; }
+  .light-section section { padding-top: 0; padding-bottom: 0; }
   .section-label {
     font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase;
     color: var(--sakura-deep); margin-bottom: 0.75rem;
     display: flex; align-items: center; gap: 1rem;
   }
   .section-label::before { content: ''; width: 30px; height: 1px; background: var(--sakura-deep); display: inline-block; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--plum); line-height: 1.1; margin-bottom: 1.5rem; }
-  .section-title em { font-style: italic; color: var(--sakura-deep); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--sakura-light); line-height: 1.1; margin-bottom: 1.5rem; }
+  .section-title em { font-style: italic; color: var(--sakura); }
+  .about-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.9; color: rgba(244,184,200,0.55); margin-bottom: 1.5rem; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
-  .about-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.5rem; }
   .about-visual { position: relative; display: flex; align-items: center; justify-content: center; }
-  .jp-block {
     background: var(--plum); border-radius: 4px; padding: 3rem 2rem; text-align: center;
     border: 1px solid rgba(244,184,200,0.15); position: relative; overflow: hidden;
   }
@@ -161,7 +163,75 @@
   .divider { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem 0; color: rgba(212,120,154,0.4); font-size: 0.6rem; letter-spacing: 0.5em; }
   .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(212,120,154,0.3)); }
   .divider::after { background: linear-gradient(to left, transparent, rgba(212,120,154,0.3)); }
-  @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } .nav-links { display: none; } }
+  /* ── Meet the Maids Carousel ── */
+  .maids-bg { background: var(--plum); padding: 6rem 0; position: relative; overflow: hidden; }
+  .maids-bg::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 50% at 100% 0%, rgba(201,169,122,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 40% at 0% 100%, rgba(244,184,200,0.05) 0%, transparent 60%);
+  }
+  .maids-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+  .maids-inner .section-label { color: rgba(244,184,200,0.5); }
+  .maids-inner .section-label::before { background: rgba(244,184,200,0.5); }
+  .maids-inner .section-title { color: var(--sakura-light); }
+  .maids-inner .section-title em { color: var(--sakura); }
+  /* Carousel stage */
+  .maids-carousel { position: relative; margin-top: 3rem; }
+  .maids-stage {
+    display: flex; justify-content: center; align-items: stretch;
+    gap: 1.5rem; padding: 1rem 2rem 2rem; position: relative;
+  }
+  .maids-fade-left, .maids-fade-right {
+    position: absolute; top: 0; bottom: 0; width: 15%; pointer-events: none; z-index: 4;
+  }
+  .maids-fade-left { left: 0; background: linear-gradient(to right, var(--plum) 0%, transparent 100%); }
+  .maids-fade-right { right: 0; background: linear-gradient(to left, var(--plum) 0%, transparent 100%); }
+  /* The three visible slots */
+  .maid-slot { flex: 0 0 400px; transition: opacity 0.45s ease, transform 0.45s ease; will-change: opacity, transform; align-self: stretch; display: flex; flex-direction: column; }
+  .maid-slot .maid-card { flex: 1; }
+  .maid-slot.slot-side { opacity: 0.38; transform: scale(0.88); cursor: pointer; }
+  .maid-slot.slot-side:hover { opacity: 0.6; transform: scale(0.91); }
+  .maid-slot.slot-center { opacity: 1; transform: scale(1); cursor: default; }
+  /* Card itself */
+  .maid-card {
+    width: 100%; border-radius: 6px; overflow: hidden;
+    border: 1px solid rgba(244,184,200,0.15);
+    background: #3a1a28;
+    display: flex; flex-direction: row;
+  }
+  .maid-slot.slot-center .maid-card { border-color: rgba(244,184,200,0.35); }
+  .maid-photo { width: 160px; min-width: 160px; aspect-ratio: 9/16; object-fit: cover; display: block; align-self: stretch; }
+  .maid-photo-placeholder {
+    width: 160px; min-width: 160px; aspect-ratio: 9/16; display: flex;
+    align-items: center; justify-content: center; font-size: 3rem;
+    background: linear-gradient(160deg, rgba(244,184,200,0.12) 0%, rgba(42,21,32,0.9) 100%);
+  }
+  .maid-info { padding: 1.25rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+  .maid-name {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400;
+    color: var(--sakura); margin-bottom: 0.2rem; letter-spacing: 0.05em;
+  }
+  .maid-role {
+    font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem; opacity: 0.8;
+  }
+  .maid-bio {
+    font-size: 0.75rem; color: rgba(244,184,200,0.8); line-height: 1.75; letter-spacing: 0.02em;
+    flex: 1; display: flex; align-items: flex-start;
+  }
+  /* Dots */
+  .maids-dots { display: flex; justify-content: center; gap: 0.6rem; padding: 0.5rem 0 0.5rem; }
+  .maids-dot {
+    width: 6px; height: 6px; border-radius: 50%; border: none; cursor: pointer; padding: 0;
+    background: rgba(244,184,200,0.2); transition: background 0.3s, transform 0.3s;
+  }
+  .maids-dot.active { background: var(--sakura); transform: scale(1.4); }
+  @media (max-width: 700px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .nav-links { display: none; }
+    .maid-slot { flex: 0 0 260px; }
+    .maid-photo, .maid-photo-placeholder { width: 90px; min-width: 90px; }
+  }
 </style>
 </head>
 <body>
@@ -173,6 +243,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#maids">Maids</a></li>
     <li><a href="#visit">Visit</a></li>
     <li><a href="https://discord.gg/yumemaidcafe" target="_blank">Discord</a></li>
   </ul>
@@ -180,7 +251,7 @@
 
 <div class="hero" id="home">
   <img src="https://yume.cafe/Transparent-03.png" alt="Yume Maid Cafe" class="hero-logo"/>
-  <p class="hero-tagline">A dream spun in starlight &amp; sakura</p>
+  <p class="hero-tagline">A dream spun in starlight</p>
   <p class="hero-sub">Yume Maid Cafe · VRChat · Est. 2025</p>
   <div class="hero-buttons">
     <a href="#about" class="btn-primary">Enter the Dream</a>
@@ -194,6 +265,7 @@
   </div>
 </div>
 
+<div class="light-section" id="about-wrap">
 <section id="about">
   <div class="section-label">お知らせ · About</div>
   <h2 class="section-title">A sanctuary<br>for <em>dreamers</em></h2>
@@ -213,6 +285,7 @@
     </div>
   </div>
 </section>
+</div><!-- end about light-section -->
 
 <div class="divider">✦ ✦ ✦</div>
 
@@ -245,11 +318,153 @@
   </div>
 </div>
 
-<section id="visit">
+<section id="visit" style="background:#1a0a10; max-width:100%; padding:6rem 2rem;">
+<div style="max-width:1100px;margin:0 auto;">
   <div class="section-label">営業時間 · Hours</div>
   <h2 class="section-title">Come find<br>us in <em>VRChat</em></h2>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--muted);margin-bottom:0.5rem;line-height:1.8;">Our doors open every week — step through and let yourself be whisked away. Check our Discord for exact world links and special event schedules.</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(244,184,200,0.55);margin-bottom:0.5rem;line-height:1.8;">Our doors open every week — step through and let yourself be whisked away. Check our Discord for exact world links and special event schedules.</p>
+</div>
 </section>
+
+<div class="maids-bg" id="maids">
+  <div class="maids-inner">
+    <div class="section-label">メイドたち · Our Maids</div>
+    <h2 class="section-title">Meet the <em>maids</em></h2>
+  </div>
+  <div class="maids-carousel">
+    <div class="maids-stage" id="maidsStage">
+      <div class="maids-fade-left"></div>
+      <div class="maid-slot slot-side" id="slotLeft"></div>
+      <div class="maid-slot slot-center" id="slotCenter"></div>
+      <div class="maid-slot slot-side" id="slotRight"></div>
+      <div class="maids-fade-right"></div>
+    </div>
+    <div class="maids-dots" id="maidsDots"></div>
+  </div>
+</div>
+
+<!-- Hidden maid data — add new .maid-data blocks here to add maids -->
+<div id="maidsData" style="display:none">
+
+  <!-- ── MAID ── copy this block to add a new maid -->
+  <div class="maid-data">
+    <img class="maid-photo" src="bisci.png" alt="Spoiled Biscuit">
+    <div class="maid-info">
+      <p class="maid-name">Spoiled Biscuit</p>
+      <p class="maid-role">Head Maid</p>
+      <p class="maid-bio">Bisky, the “Black Fin Terror,” is a chaotic, coffee-fueled tsundere Housekeeper of Yume Maid Café who hides a genuine passion for making people smile beneath her sharp attitude, all while obsessing over games (yes, even simulators), gacha horse girls, Gunpla, and Italian sweets.</p>
+    </div>
+  </div>
+  <div class="maid-data">
+    <img class="maid-photo" src="lady.png" alt="Lady">
+    <div class="maid-info">
+      <p class="maid-name">❀Lady❀</p>
+      <p class="maid-role">Maid</p>
+      <p class="maid-bio">Lady, the “Under-volted Machine Maid,” is a gentle android NPC with a calm, supportive presence who doubles as tech support, finding joy in technology, modding, and quiet, wholesome interactions while helping others restore their “serenity.”</p>
+    </div>
+  </div>
+  <div class="maid-data">
+    <img class="maid-photo" src="astral.png" alt="Lady">
+    <div class="maid-info">
+      <p class="maid-name">Astral Cricket</p>
+      <p class="maid-role">Head Maid</p>
+      <p class="maid-bio">The “Cozy Face Tracer,” a Gen 1 Head Maid, is a warm and nurturing presence who specializes in comforting shy or anxious guests with gentle conversation, soft care, and consent-based cuddly attention.</p>
+    </div>
+  </div>
+</div><!-- end #maidsData -->
+
+<script>
+(function () {
+  const maids    = Array.from(document.querySelectorAll('#maidsData .maid-data'));
+  const total    = maids.length;
+  const slotLeft   = document.getElementById('slotLeft');
+  const slotCenter = document.getElementById('slotCenter');
+  const slotRight  = document.getElementById('slotRight');
+  const dotsEl     = document.getElementById('maidsDots');
+
+  let current  = Math.floor(Math.random() * total);
+  let animating = false;
+  let timer;
+
+  // Build dots
+  maids.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.className = 'maids-dot';
+    d.setAttribute('aria-label', 'Maid ' + (i + 1));
+    d.addEventListener('click', function() { goTo(i); resetTimer(); });
+    dotsEl.appendChild(d);
+  });
+
+  function wrap(i) { return ((i % total) + total) % total; }
+
+  function makeCard(index) {
+    var el = document.createElement('div');
+    el.className = 'maid-card';
+    el.innerHTML = maids[index].innerHTML;
+    return el;
+  }
+
+  // Populate slots instantly (no animation) — used on init
+  function renderInstant() {
+    slotLeft.innerHTML   = ''; slotLeft.appendChild(makeCard(wrap(current - 1)));
+    slotCenter.innerHTML = ''; slotCenter.appendChild(makeCard(current));
+    slotRight.innerHTML  = ''; slotRight.appendChild(makeCard(wrap(current + 1)));
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll('.maids-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  // Animated transition: fade all slots out, swap content, fade back in
+  function goTo(next, skipAnim) {
+    if (animating || next === current) return;
+    animating = true;
+    current = wrap(next);
+
+    var slots = [slotLeft, slotCenter, slotRight];
+
+    // Fade out
+    slots.forEach(function(s) { s.style.opacity = '0'; s.style.transform = 'scale(0.92)'; });
+
+    setTimeout(function() {
+      // Swap content while invisible
+      slotLeft.innerHTML   = ''; slotLeft.appendChild(makeCard(wrap(current - 1)));
+      slotCenter.innerHTML = ''; slotCenter.appendChild(makeCard(current));
+      slotRight.innerHTML  = ''; slotRight.appendChild(makeCard(wrap(current + 1)));
+      updateDots();
+
+      // Fade back in — side slots to their dimmed state, center to full
+      slotLeft.style.opacity   = '0.38'; slotLeft.style.transform   = 'scale(0.88)';
+      slotCenter.style.opacity = '1';    slotCenter.style.transform = 'scale(1)';
+      slotRight.style.opacity  = '0.38'; slotRight.style.transform  = 'scale(0.88)';
+
+      setTimeout(function() { animating = false; }, 500);
+    }, 300);
+  }
+
+  function next() { goTo(current + 1); }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, 3500);
+  }
+
+  // Side slot clicks
+  slotLeft.addEventListener('click',  function() { if (!animating) { goTo(wrap(current - 1)); resetTimer(); } });
+  slotRight.addEventListener('click', function() { if (!animating) { goTo(wrap(current + 1)); resetTimer(); } });
+
+  // Pause on hover
+  var stage = document.getElementById('maidsStage');
+  stage.addEventListener('mouseenter', function() { clearInterval(timer); });
+  stage.addEventListener('mouseleave', resetTimer);
+
+  renderInstant();
+  resetTimer();
+})();
+</script>
 
 <div class="cta-section">
   <div class="cta-inner">
