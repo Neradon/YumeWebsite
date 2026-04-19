@@ -1,0 +1,194 @@
+/* =============================================================
+   hero.css — hero section: grid, title, side cards, doodles
+   ============================================================= */
+
+/* ---- Section shell ---- */
+.hero {
+  position: relative;
+  padding: 52px 0 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr 240px;
+  gap: 28px;
+  align-items: center;
+}
+
+/* ---- Central hero card ---- */
+.hero-card {
+  position: relative;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+  transform: rotate(-.5deg);
+}
+.hero-card::before {
+  content: "";
+  position: absolute; inset: 10px;
+  border: 1.5px dashed color-mix(in oklab, var(--accent) 50%, transparent);
+  border-radius: calc(var(--radius-lg) - 10px);
+  pointer-events: none;
+}
+
+/* ---- Photo placeholder ---- */
+.hero-photo {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  background:
+    repeating-linear-gradient(135deg,
+      color-mix(in oklab, var(--accent) 12%, var(--cream-2)) 0 14px,
+      var(--cream-2) 14px 28px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 22px;
+  position: relative; overflow: hidden;
+  border: 1.5px solid var(--border);
+}
+.hero-photo .ph-label {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px; color: var(--plum-soft);
+  background: rgba(255,255,255,.85);
+  border: 1px solid var(--border);
+  padding: 4px 8px; border-radius: 6px;
+  align-self: flex-start;
+  text-transform: uppercase; letter-spacing: .08em;
+}
+.hero-photo .ph-caption {
+  font-family: var(--font-script);
+  font-size: 32px; color: var(--plum); line-height: 1;
+  margin-top: auto; align-self: flex-end; text-align: right;
+}
+
+.hero-caption {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 16px;
+  font-family: var(--font-script); color: var(--plum-soft); font-size: 20px;
+}
+.hero-caption .heart { color: var(--accent); }
+
+/* ---- Hero title ---- */
+.hero-title {
+  text-align: center;
+  padding: 0 8px;
+}
+
+.hero-kicker {
+  display: inline-block;
+  font-family: var(--font-script); font-size: 26px; color: var(--plum-soft);
+  margin-bottom: 8px; position: relative;
+}
+.hero-kicker::before,
+.hero-kicker::after { content: "♡"; color: var(--accent); margin: 0 10px; font-size: 18px; vertical-align: middle; }
+
+h1.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(54px, 7vw, 96px);
+  line-height: .95; margin: 0;
+  color: var(--plum); letter-spacing: -.01em;
+}
+h1.hero-h1 em {
+  font-style: italic; font-family: var(--font-display);
+  color: var(--accent); position: relative;
+}
+h1.hero-h1 em::after {
+  content: "";
+  position: absolute; left: 4%; right: 4%; bottom: -6px; height: 10px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' fill='none' stroke='%23ff8fb8' stroke-width='2.2' stroke-linecap='round'><path d='M2 7 Q 20 1, 40 6 T 80 6 T 118 5'/></svg>") center/100% 100% no-repeat;
+}
+
+.hero-sub {
+  margin: 22px auto 0;
+  max-width: 460px; color: var(--plum-soft); font-size: 15px;
+}
+
+/* ---- CTA buttons ---- */
+.hero-ctas {
+  margin-top: 24px;
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600; font-size: 14px;
+  border: 1.5px solid var(--plum);
+  color: var(--plum); background: #fff;
+  box-shadow: 0 3px 0 var(--plum);
+  transition: transform .12s, box-shadow .12s;
+}
+.btn:hover  { transform: translateY(-1px); box-shadow: 0 5px 0 var(--plum); }
+.btn:active { transform: translateY(2px);  box-shadow: 0 1px 0 var(--plum); }
+.btn.primary { background: var(--plum); color: var(--cream); }
+.btn.ghost   { background: rgba(255,255,255,.6); }
+
+/* ---- Side cards (menu snippet & mini schedule) ---- */
+.side-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 16px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.side-card.menu     { transform: rotate(-2deg); }
+.side-card.schedule { transform: rotate(1.8deg); }
+
+.side-card .sc-label {
+  font-family: var(--font-script); font-size: 26px; color: var(--plum);
+  line-height: 1; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* Menu snippet */
+.side-card.menu .menu-items { display: flex; flex-direction: column; gap: 8px; }
+.menu-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 6px 2px; border-bottom: 1px dashed var(--border); font-size: 13px;
+}
+.menu-item:last-child { border-bottom: 0; }
+.menu-item .mi-name  { color: var(--plum); }
+.menu-item .mi-price { color: var(--plum-soft); font-family: var(--font-script); font-size: 16px; }
+.side-card.menu .view-all {
+  margin-top: 10px;
+  font-size: 12px; color: var(--accent); font-weight: 600;
+  display: inline-block; border-bottom: 1px dashed currentColor;
+}
+
+/* Schedule snippet */
+.schedule-list { display: flex; flex-direction: column; gap: 10px; }
+.sched-row {
+  display: grid; grid-template-columns: 44px 1fr; gap: 10px;
+  padding: 8px; border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--accent-2) 20%, white);
+}
+.sched-row .sr-date {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: white; border-radius: 8px; padding: 4px 0;
+  font-family: var(--font-display); color: var(--plum); line-height: 1;
+}
+.sched-row .sr-date .day { font-size: 20px; }
+.sched-row .sr-date .mo  {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--plum-soft); margin-top: 2px;
+  font-family: var(--font-body); font-weight: 600;
+}
+.sched-row .sr-info .title { font-weight: 600; font-size: 13px; color: var(--plum); }
+.sched-row .sr-info .time  { font-size: 11px; color: var(--plum-soft); }
+
+/* ---- Floating doodle stickers ---- */
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  color: var(--accent);
+}
+.doodle.spin { animation: slowspin 18s linear infinite; }
+@keyframes slowspin { to { transform: rotate(360deg); } }
+.doodle.bob  { animation: bob 5s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-10px) rotate(4deg); } }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}

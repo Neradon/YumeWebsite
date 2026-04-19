@@ -1,0 +1,83 @@
+/* =============================================================
+   tokens.css — design tokens: palette, typography, radii, shadows
+   ============================================================= */
+
+:root {
+  /* ---- Palette: Rose (default) ---- */
+  --cream:      #fff6f2;
+  --cream-2:    #fdeadf;
+  --pink-1:     #ffd6e3;
+  --pink-2:     #ffb3cf;
+  --pink-3:     #ff8fb8;
+  --lilac-1:    #e6d7ff;
+  --lilac-2:    #c9b0f0;
+  --plum:       #4a2a48;
+  --plum-soft:  #6b3e68;
+  --ink:        #3a1f38;
+  --gold:       #d9a441;
+  --mint:       #b8e4cf;
+
+  --bg:       var(--cream);
+  --card:     #ffffff;
+  --accent:   var(--pink-3);
+  --accent-2: var(--lilac-2);
+  --border:   #f1d8e0;
+
+  /* ---- Typography ---- */
+  --font-display: "DM Serif Display", "Gloock", serif;
+  --font-script:  "Caveat", cursive;
+  --font-body:    "Instrument Sans", system-ui, sans-serif;
+
+  /* ---- Shape ---- */
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 10px;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 2px 0 rgba(74,42,72,.06),  0 6px 18px -8px  rgba(74,42,72,.18);
+  --shadow-md: 0 4px 0 rgba(74,42,72,.08),  0 18px 38px -12px rgba(74,42,72,.22);
+}
+
+/* ---- Palette variants ---- */
+body[data-palette="lilac"] {
+  --bg:       #f6efff;
+  --cream-2:  #eadcff;
+  --pink-1:   #e6d7ff;
+  --pink-2:   #d4beff;
+  --pink-3:   #b49aff;
+  --accent:   #b49aff;
+  --accent-2: #ffb3cf;
+  --border:   #e0d0f5;
+}
+body[data-palette="mint"] {
+  --bg:       #f0faf3;
+  --cream-2:  #d9f1e2;
+  --pink-1:   #c8ecd7;
+  --pink-2:   #9fdcb6;
+  --pink-3:   #f49cc4;
+  --accent:   #f49cc4;
+  --accent-2: #9fdcb6;
+  --border:   #d5eedd;
+}
+body[data-palette="butter"] {
+  --bg:       #fff8e5;
+  --cream-2:  #ffedb8;
+  --pink-1:   #ffe4a8;
+  --pink-2:   #f6c76a;
+  --pink-3:   #e98fb7;
+  --accent:   #e98fb7;
+  --accent-2: #f6c76a;
+  --border:   #f5e3b5;
+}
+body[data-palette="dusk"] {
+  --bg:       #f3e8f2;
+  --cream-2:  #e7d2e7;
+  --pink-1:   #e9cbe4;
+  --pink-2:   #caa2cd;
+  --pink-3:   #a57bbf;
+  --accent:   #a57bbf;
+  --accent-2: #f3b2c9;
+  --plum:     #2f1a3d;
+  --ink:      #2f1a3d;
+  --border:   #e1c9df;
+}

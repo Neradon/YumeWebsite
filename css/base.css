@@ -1,0 +1,50 @@
+/* =============================================================
+   base.css — reset, body, global typography, utilities
+   ============================================================= */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+  cursor: none;
+
+  /* ambient gradient */
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,.7), transparent 40%),
+    radial-gradient(circle at 90% 20%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 45%),
+    radial-gradient(circle at 80% 90%, color-mix(in oklab, var(--accent-2) 18%, transparent), transparent 45%);
+  background-attachment: fixed;
+}
+
+/* subtle dotted-paper overlay */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: radial-gradient(rgba(74,42,72,.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.2));
+}
+
+a      { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: none; }
+
+/* ---- Layout helpers ---- */
+.page { position: relative; z-index: 1; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ---- Utility: card tilts (used by roster grid) ---- */
+.tilt-1 { --tilt: -1.5deg; }
+.tilt-2 { --tilt:  1deg;   }
+.tilt-3 { --tilt: -.8deg;  }
+.tilt-4 { --tilt:  1.8deg; }
+.tilt-5 { --tilt: -1.2deg; }
+
+.hidden { display: none !important; }
