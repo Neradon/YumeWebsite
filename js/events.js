@@ -45,13 +45,10 @@ export function renderMiniSchedule(events) {
 
 function renderEvents(events, live) {
   const grid   = document.getElementById("events-grid");
-  const status = document.getElementById("events-status");
   grid.innerHTML = "";
 
   if (!events.length) {
     grid.innerHTML = `<div class="events-empty">no upcoming events — check back soon ♡</div>`;
-    status.className   = "events-status";
-    status.textContent = live ? "connected to calendar" : "";
     return;
   }
 
@@ -79,11 +76,6 @@ function renderEvents(events, live) {
       </div>`;
     grid.appendChild(card);
   });
-
-  status.className   = live ? "events-status live" : "events-status";
-  status.textContent = live
-    ? "live from google calendar"
-    : "showing demo events · add calendar in Tweaks";
 
   renderMiniSchedule(events);
 }
@@ -134,8 +126,6 @@ export async function loadEvents() {
     renderMiniSchedule(events);
   } catch (err) {
     renderEvents(DEMO_EVENTS, false);
-    const status = document.getElementById("events-status");
-    status.textContent = `couldn't load calendar (${err.message}) — showing demo events`;
     console.warn("GCal error:", err);
   }
 }
