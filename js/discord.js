@@ -7,7 +7,6 @@ function fmt(n) { return Number(n).toLocaleString(); }
 export async function loadDiscord() {
   const { discordServerId, discordInviteUrl } = window.__TWEAKS;
 
-  const status = document.getElementById("discord-status");
   const invite = document.getElementById("dc-invite");
 
   // Wire up invite button
@@ -18,8 +17,6 @@ export async function loadDiscord() {
   if (!discordServerId) {
     document.getElementById("dc-members").textContent = "2,418";
     document.getElementById("dc-online").textContent  = "86";
-    status.className   = "discord-status";
-    status.textContent = "demo counts · add server id in Tweaks for live data";
     return;
   }
 
@@ -65,12 +62,8 @@ export async function loadDiscord() {
       invite.target = "_blank";
     }
 
-    status.className   = "discord-status live";
-    status.textContent = "live from discord widget";
   } catch (err) {
     document.getElementById("dc-members").textContent = "—";
     document.getElementById("dc-online").textContent  = "—";
-    status.className   = "discord-status";
-    status.textContent = "couldn't reach server widget (make sure it's enabled)";
   }
 }
