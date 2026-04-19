@@ -112,6 +112,7 @@
 .discord-stats {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   margin-top: 24px; max-width: 440px;
+  margin-bottom: 24px;
 }
 .discord-stats div {
   background: rgba(255,255,255,.2); border: 1.5px solid rgba(255,255,255,.4);
