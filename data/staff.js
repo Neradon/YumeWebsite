@@ -111,45 +111,8 @@ export const STAFF = {
       details: "Specializes in helping shy or anxious guests feel at ease. Lots of gentle interaction and conversation.",
       photo: "astralcricket.png"
     },
-  ],
 
-  butlers: [
-    {
-      name: "Craftsy",
-      handle: "craftsy ♡",
-      pronouns: "they / them",
-      debut: "—",
-      drink: "hot chocolate",
-      bday: "February 19",
-      shifts: "—",
-      tags: ["adhd incarnate", "edm", "d&d", "fantasy nerd"],
-      spec: "music mayhem",
-      bio: "A chaotic dragon fueled by spicy food, louder music, and even louder ideas. Lives for nerdy conversations and high-energy vibes.",
-      quote: "come vibe with me ♡",
-      status: "on",
-      effect: "Grants 'Good Vibes': +20% stats + haste, bonus for tomboy cards.",
-      details: "Proudly chaotic and not planning to change that.",
-      photo: "craftsy.png"
-    },
-
-    {
-      name: "Kai_XD",
-      handle: "kai_xd ✦",
-      pronouns: "they / them",
-      debut: "—",
-      drink: "—",
-      bday: "July 28",
-      shifts: "—",
-      tags: ["mecha", "vocaloid", "gaming", "positive"],
-      spec: "contagious laughter",
-      bio: "An upbeat chaos gremlin who thrives on fun, music, and shared nerd interests.",
-      quote: "we're here for a good time XD",
-      status: "on",
-      effect: "Boosts ATK/DEF and spreads laughter across allies.",
-      details: "Will absolutely ramble about Gundam or Hatsune Miku if allowed.",
-      photo: "kaixd.png"
-    },
-
+    
     {
   name: "Art",
   handle: "art ♡",
@@ -221,6 +184,44 @@ export const STAFF = {
   details: "Housekeeper and part-time head maid. Loves games, Gunpla, and Italian sweets. Will absolutely fight you over coffee opinions.",
   photo: "spoiledbiscuit.png"
 }
+  ],
+
+  butlers: [
+    {
+      name: "Craftsy",
+      handle: "craftsy ♡",
+      pronouns: "they / them",
+      debut: "—",
+      drink: "hot chocolate",
+      bday: "February 19",
+      shifts: "—",
+      tags: ["adhd incarnate", "edm", "d&d", "fantasy nerd"],
+      spec: "music mayhem",
+      bio: "A chaotic dragon fueled by spicy food, louder music, and even louder ideas. Lives for nerdy conversations and high-energy vibes.",
+      quote: "come vibe with me ♡",
+      status: "on",
+      effect: "Grants 'Good Vibes': +20% stats + haste, bonus for tomboy cards.",
+      details: "Proudly chaotic and not planning to change that.",
+      photo: "craftsy.png"
+    },
+
+    {
+      name: "Kai_XD",
+      handle: "kai_xd ✦",
+      pronouns: "they / them",
+      debut: "—",
+      drink: "—",
+      bday: "July 28",
+      shifts: "—",
+      tags: ["mecha", "vocaloid", "gaming", "positive"],
+      spec: "contagious laughter",
+      bio: "An upbeat chaos gremlin who thrives on fun, music, and shared nerd interests.",
+      quote: "we're here for a good time XD",
+      status: "on",
+      effect: "Boosts ATK/DEF and spreads laughter across allies.",
+      details: "Will absolutely ramble about Gundam or Hatsune Miku if allowed.",
+      photo: "kaixd.png"
+    },
   ],
 
   hosts: [],
