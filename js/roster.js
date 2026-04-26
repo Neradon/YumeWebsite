@@ -26,7 +26,7 @@ export function renderRoster(key) {
     const card    = document.createElement("button");
     card.className = `card ${tiltCls}`;
     card.innerHTML = `
-      <div class="c-photo">
+      <div class="c-photo" ${p.photo ? `style="background-image:url('pics/${p.photo}'); background-size:cover; background-position:center top;"` : ""}>
         <span class="ph-label">// ${p.handle.split(" ")[0]}.jpg</span>
         <span class="status-dot ${p.status === "on" ? "" : "off"}">
           ${p.status === "on" ? "on shift" : "off today"}
