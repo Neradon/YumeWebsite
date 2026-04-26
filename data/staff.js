@@ -19,6 +19,7 @@ export const STAFF = {
       status: "on",
       effect: "All opponents are afflicted with compulsive trauma dumping.",
       details: "Loves providing cuddles and tracing on request. A self-proclaimed disaster with a lot to say.",
+      photo: "liltrouble.png"
     },
 
     {
@@ -36,6 +37,7 @@ export const STAFF = {
       status: "on",
       effect: "Genetic Splice: once per turn, fuse a card to upgrade it into a stronger one.",
       details: "Equal parts nerd and menace. Will help you… or mess with you. Sometimes both.",
+      photo: "agroses.png"
     },
 
     {
@@ -53,6 +55,7 @@ export const STAFF = {
       status: "on",
       effect: "Adapts presentation freely — can shift between masc and femme vibes.",
       details: "Nonbinary and welcoming. Always open to chatting and getting to know others.",
+      photo: "crow3bar.png"
     },
 
     {
@@ -70,6 +73,7 @@ export const STAFF = {
       status: "on",
       effect: "While equipped with Carbonara, unaffected by all negative effects.",
       details: "Loves co-op games, spaghetti carbonara, and their cat Feli. Strong anti-bullying energy.",
+      photo: "foxshymaid.png"
     },
 
     {
@@ -87,6 +91,7 @@ export const STAFF = {
       status: "on",
       effect: "Restores +1000 Serenity to all nearby allies when a guest enters.",
       details: "Loves technology, modding, and peaceful conversations. Strictly wholesome NPC energy.",
+      photo: "lady.png"
     },
 
     {
@@ -104,6 +109,7 @@ export const STAFF = {
       status: "on",
       effect: "Gains hydration token when Traveling Ghost enters the field.",
       details: "Specializes in helping shy or anxious guests feel at ease. Lots of gentle interaction and conversation.",
+      photo: "astralcricket.png"
     },
   ],
 
@@ -123,6 +129,7 @@ export const STAFF = {
       status: "on",
       effect: "Grants 'Good Vibes': +20% stats + haste, bonus for tomboy cards.",
       details: "Proudly chaotic and not planning to change that.",
+      photo: "craftsy.png"
     },
 
     {
@@ -140,6 +147,7 @@ export const STAFF = {
       status: "on",
       effect: "Boosts ATK/DEF and spreads laughter across allies.",
       details: "Will absolutely ramble about Gundam or Hatsune Miku if allowed.",
+      photo: "kaixd.png"
     },
   ],
 
