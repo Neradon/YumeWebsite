@@ -1,5 +1,5 @@
 export const FEATURED = [
-  "vrc1.jpg",
-  "vrc2.jpg",
-  "vrc3.jpg",
+  "vrc1.png",
+  "vrc2.png",
+  "vrc3.png",
 ];
