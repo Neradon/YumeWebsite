@@ -70,7 +70,15 @@ function openModal(key, p) {
   document.getElementById("m-role").textContent     = ROLE_LABEL[key];
   document.getElementById("m-name").textContent     = p.name;
   document.getElementById("m-handle").textContent   = p.handle;
-  document.getElementById("m-ph-label").textContent = `// ${p.handle.split(" ")[0]}_full.jpg`;
+
+  const modalPhoto = document.getElementById("modal-photo");
+  modalPhoto.style.backgroundImage = p.photo ? `url('pics/${p.photo}')` : "";
+  modalPhoto.style.backgroundSize  = "cover";
+  modalPhoto.style.backgroundPosition = "center top";
+  document.getElementById("m-ph-label").textContent = p.photo
+  ? `// ${p.photo}`
+  : `// ${p.handle.split(" ")[0]}_full.jpg`;
+  
   document.getElementById("m-pronouns").textContent = p.pronouns;
   document.getElementById("m-bio").textContent      = p.bio;
   document.getElementById("m-drink").textContent    = p.drink;
