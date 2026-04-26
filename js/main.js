@@ -15,6 +15,8 @@ import { applyTweaks }  from "./tweaks.js";
 import "./roster.js";
 import { loadEvents }   from "./events.js";
 import { loadDiscord }  from "./discord.js";
+import { FEATURED } from "../data/featured.js";
+
 
 // ---- Apply saved tweaks on boot --------------------------------------------
 applyTweaks(window.__TWEAKS);
@@ -43,3 +45,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// Pick a random featured image each page load
+if (FEATURED.length) {
+  const pick = FEATURED[Math.floor(Math.random() * FEATURED.length)];
+  const el   = document.getElementById("hero-photo");
+  el.style.backgroundImage    = `url('pics/featured/${pick}')`;
+  el.style.backgroundSize     = "cover";
+  el.style.backgroundPosition = "center top";
+}
