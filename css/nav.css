@@ -31,7 +31,7 @@
   background: radial-gradient(circle at 30% 30%, #fff, var(--pink-2) 60%, var(--pink-3));
   display: grid; place-items: center;
   box-shadow: inset 0 -3px 6px rgba(74,42,72,.1);
-  background-image: url('pics/logo.png');
+  background-image: url('../pics/logo.png');
 }
 .brand-mark svg { width: 22px; height: 22px; color: var(--plum); }
 
