@@ -27,10 +27,6 @@ export function renderRoster(key) {
     card.className = `card ${tiltCls}`;
     card.innerHTML = `
       <div class="c-photo" ${p.photo ? `style="background-image:url('pics/${p.photo}'); background-size:cover; background-position:center top;"` : ""}>
-        <span class="ph-label">// ${p.handle.split(" ")[0]}.jpg</span>
-        <span class="status-dot ${p.status === "on" ? "" : "off"}">
-          ${p.status === "on" ? "on shift" : "off today"}
-        </span>
       </div>
       <div class="c-name">${p.name}</div>
       <div class="c-handle">
@@ -75,9 +71,7 @@ function openModal(key, p) {
   modalPhoto.style.backgroundImage = p.photo ? `url('pics/${p.photo}')` : "";
   modalPhoto.style.backgroundSize  = "cover";
   modalPhoto.style.backgroundPosition = "center top";
-  document.getElementById("m-ph-label").textContent = p.photo
-  ? `// ${p.photo}`
-  : `// ${p.handle.split(" ")[0]}_full.jpg`;
+
   
   document.getElementById("m-pronouns").textContent = p.pronouns;
   document.getElementById("m-bio").textContent      = p.bio;
