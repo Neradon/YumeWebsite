@@ -21,6 +21,8 @@ export function renderRoster(key) {
         ]
       : STAFF[key].map(p => ({ ...p, _role: key }));
 
+  items.sort(() => Math.random() - 0.5); // ← add this
+
   items.forEach((p, i) => {
     const tiltCls = `tilt-${(i % 5) + 1}`;
     const card    = document.createElement("button");
