@@ -149,6 +149,78 @@ export const STAFF = {
       details: "Will absolutely ramble about Gundam or Hatsune Miku if allowed.",
       photo: "kaixd.png"
     },
+
+    {
+  name: "Art",
+  handle: "art ♡",
+  pronouns: "—",
+  debut: "—",
+  drink: "rat and water",
+  bday: "March 3",
+  shifts: "—",
+  tags: ["chaotic", "introvert", "literature", "league", "silly"],
+  spec: "summoning & antics",
+  bio: "A deceptively high-energy introvert who thrives on silly bits, obscure talents, and listening to people ramble about what they love.",
+  quote: "go on... tell me more ><",
+  status: "on",
+  effect: "Puppy Dog Eyes: makes opponents feel guilty and more likely to go along with antics.",
+  details: "Joined to get better at talking to people. Secretly shy, surprisingly chaotic.",
+  photo: "art.png"
+},
+
+{
+  name: "AnnaStarlight",
+  handle: "anna ✨",
+  pronouns: "she / her",
+  debut: "—",
+  drink: "banana split sundae",
+  bday: "March 30",
+  shifts: "—",
+  tags: ["fairy", "cozy", "fantasy", "cute", "calm"],
+  spec: "fairy magic",
+  bio: "A gentle fairy maid who brings soft, sparkly comfort and cozy energy to every guest she meets.",
+  quote: "let's make today a little more magical ♡",
+  status: "on",
+  effect: "Sparklestorm: reduces resistance to charm and sleep effects for non-fairy cards.",
+  details: "Loves fantasy, cozy vibes, and quiet conversations. Best experienced in a calm corner with a warm drink.",
+  photo: "annastarlight.png"
+},
+
+{
+  name: "Kirisame Marisa",
+  handle: "marisa ✦",
+  pronouns: "she / her",
+  debut: "—",
+  drink: "wine",
+  bday: "September 17",
+  shifts: "—",
+  tags: ["touhou", "vtuber", "karaoke", "chaotic"],
+  spec: "carefree magic",
+  bio: "A carefree magician with a love for karaoke, Touhou, and a little bit of mischief.",
+  quote: "let's have some fun — da ze~",
+  status: "on",
+  effect: "Stealing: may copy or take effects from other cards.",
+  details: "Also known as Evo Skorpion. Often found at events or singing her heart out.",
+  photo: "evoskorpion.png"
+},
+
+{
+  name: "Spoiled Biscuit",
+  handle: "bisky ☕",
+  pronouns: "she / her",
+  debut: "—",
+  drink: "coffee (a lot)",
+  bday: "May 2",
+  shifts: "—",
+  tags: ["tsundere", "chaotic", "gacha", "coffee", "gremlin"],
+  spec: "blow hole blast",
+  bio: "A tsundere chaos gremlin fueled by caffeine, gacha addiction, and pure stubborn energy.",
+  quote: "i-it's not like i wanted you here or anything!",
+  status: "on",
+  effect: "Gains +500 ATK and heavy DEF penalty when Mai Mai is on the field.",
+  details: "Housekeeper and part-time head maid. Loves games, Gunpla, and Italian sweets. Will absolutely fight you over coffee opinions.",
+  photo: "spoiledbiscuit.png"
+}
   ],
 
   hosts: [],
