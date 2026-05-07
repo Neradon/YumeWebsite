@@ -63,4 +63,16 @@
   padding: 8px 16px;
   box-shadow: 0 2px 0 rgba(74,42,72,.15);
 }
+
+
 .nav .discord-btn:hover { filter: brightness(1.05); }
+
+.nav .vrchat-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  box-shadow: 0 2px 0 rgba(74,42,72,.15);
+}
+
+.nav .vrchat-btn:hover { filter: brightness(1.05); }
