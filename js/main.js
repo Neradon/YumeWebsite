@@ -15,7 +15,8 @@ import { applyTweaks }  from "./tweaks.js";
 import "./roster.js";
 import { loadEvents }   from "./events.js";
 import { loadDiscord }  from "./discord.js";
-import { FEATURED } from "../data/featured.js";
+import { FEATURED }     from "../data/featured.js";
+import { renderPartners } from "./partners.js";
 
 
 // ---- Apply saved tweaks on boot --------------------------------------------
@@ -24,6 +25,7 @@ applyTweaks(window.__TWEAKS);
 // ---- Kick off async data loads ---------------------------------------------
 loadEvents();
 loadDiscord();
+renderPartners();
 setInterval(loadDiscord, 60_000); // refresh Discord presence every minute
 
 // ---- Smooth scroll ---------------------------------------------------------
