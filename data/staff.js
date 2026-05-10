@@ -184,6 +184,23 @@ export const STAFF = {
   details: "Housekeeper and part-time head maid. Loves games, Gunpla, and Italian sweets. Will absolutely fight you over coffee opinions.",
   photo: "spoiledbiscuit.png"
 }
+{
+  name: "roku",
+  handle: "roku 🦭",
+  pronouns: "she / her",
+  debut: "21.03.26",
+  drink: "fish",
+  bday: "gzorpnarp the neperd",
+  shifts: "—",
+  tags: ["seals", "mute", "cars", "mechanic", "cozy chaos"],
+  spec: "seal summoning",
+  bio: "A quiet but endlessly curious maid with a deep love for seals, cars, and learning absolutely everything. Despite being mute, she loves chatting through shared interests — especially anything automotive.",
+  quote: "... glorp :> 🦭",
+  status: "on",
+  effect: "Seal Summoning Circle Level 6: summons an incomprehensible quantity of seals. Historians believe the number six was named after this spell.",
+  details: "Works in heavy goods mechanics and has somehow collected an entire financially irresponsible army of cars. Has touched nearly every motorsport imaginable.",
+  photo: "roku.png"
+},
   ],
 
   butlers: [
