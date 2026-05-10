@@ -188,7 +188,7 @@ export const STAFF = {
   name: "roku",
   handle: "roku 🦭",
   pronouns: "she / her",
-  debut: "21.03.26",
+  debut: "22.03.26",
   drink: "fish",
   bday: "gzorpnarp the neperd",
   shifts: "—",
