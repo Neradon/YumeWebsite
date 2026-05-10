@@ -183,7 +183,7 @@ export const STAFF = {
   effect: "Gains +500 ATK and heavy DEF penalty when Mai Mai is on the field.",
   details: "Housekeeper and part-time head maid. Loves games, Gunpla, and Italian sweets. Will absolutely fight you over coffee opinions.",
   photo: "spoiledbiscuit.png"
-}
+},
 {
   name: "roku",
   handle: "roku 🦭",
