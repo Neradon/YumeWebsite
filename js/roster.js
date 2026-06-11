@@ -18,7 +18,7 @@ export function renderRoster(key) {
           ...STAFF.maids.map(p   => ({ ...p, _role: "maids"   })),
           ...STAFF.butlers.map(p => ({ ...p, _role: "butlers" })),
           ...STAFF.hosts.map(p   => ({ ...p, _role: "hosts"   })),
-          ...STAFF.photographers.map(p   => ({ ...p, _role: "photographer"   })),
+          ...STAFF.photographer.map(p   => ({ ...p, _role: "photographer"   })),
         ]
       : STAFF[key].map(p => ({ ...p, _role: key }));
 
