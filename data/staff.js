@@ -201,6 +201,29 @@ export const STAFF = {
   details: "Works in heavy goods mechanics and has somehow collected an entire financially irresponsible army of cars. Has touched nearly every motorsport imaginable.",
   photo: "roku.png"
 },
+    {
+  name: "Zetta",
+  handle: "zetta",
+  pronouns: "—",
+  debut: "—",
+  drink: "fortnite cola",
+  bday: "April 27",
+  shifts: "—",
+  tags: [
+    "pirate",
+    "captain",
+    "naval combat",
+    "chaotic",
+    "adventurer"
+  ],
+  spec: "gathering the crew",
+  bio: "A loud and charismatic pirate captain who sailed into Yume chasing more than treasure. Believing that dreams are worth more than gold, Zetta rallies their crew for adventure, laughter, and the occasional table plundering.",
+  quote: "People's dreams have no end! Isn't that right?!",
+  status: "on",
+  effect: "Takes all your coins and empties your pockets.",
+  details: "Specializes in naval combat and assembling the crew for rapid deployment of the plank. Loves wealth, fame, power, rum, and loud music while despising dull swords, wet gunpowder, and boring voyages. According to the wanted poster, every rumor you've heard is true... well, to some extent.",
+  photo: "zetta.png"
+},
   ],
 
   butlers: [
@@ -242,11 +265,38 @@ export const STAFF = {
   ],
 
   hosts: [],
+  photographer: [
+{
+  name: "Fuyu",
+  handle: "fuyu",
+  pronouns: "she / her",
+  debut: "—",
+  drink: "hot cocoa with marshmallows",
+  bday: "November 19",
+  shifts: "—",
+  tags: [
+    "photographer",
+    "high elf",
+    "idol",
+    "aesthetic",
+    "gaming",
+    "chess"
+  ],
+  spec: "capturing perfect moments",
+  bio: "A quiet high elf with a camera always within reach, Fuyu loves preserving beautiful moments, stylish avatars, and memories that would otherwise disappear. Whether documenting events or wandering VR worlds, she has an eye for fleeting beauty and a soft spot for cozy aesthetics.",
+  quote: "maybe you'll become my next accidental masterpiece ☆",
+  status: "on",
+  effect: "Frame Freeze!: All motion in the area becomes perfectly photogenic for 3 seconds. Gains an extra cuteness bonus if part-time idol energy is high.",
+  details: "By day, she explores virtual worlds searching for the perfect shot. By night, she's a part-time idol in training who somehow finds herself in the spotlight anyway. She loves soft lighting, piano melodies, volleyball chaos, video games, chess, and Ado's music. Bad lighting, lag, chaotic crowds, ruined photo opportunities, and beets are her greatest enemies.",
+  photo: "fuyu.png"
+},
+  ],
 };
 
 /** Human-readable role label shown in the staff modal */
 export const ROLE_LABEL = {
-  maids:   "maid ♡",
-  butlers: "butler ✦",
-  hosts:   "host ★",
+  maids:   "maid",
+  butlers: "butler",
+  hosts:   "host",
+  photographer: "photographer"
 };
